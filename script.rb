@@ -3,14 +3,37 @@
 # Split the string into an array so we can loop over each letter
 # Call the map function on the array of characters
 
-string = gets.chomp
-number = gets.chomp.to_i
-#upcase_letters = ("A".."Z").to_a
-letters = ("a".."z").to_a.join
 
-def caeser_cipher
-  new_string = string.chars.rotate(number).join
-  string.tr(letters, new_string_string)
+
+#upcase_letters = ("A".."Z").to_a
+
+=begin def caeser_cipher |string|
+  puts "Write a string: "
+  string = gets.chomp
+
+  puts "Input a number: "
+  number = gets.chomp.to_i
+
+
+  end
+end
+=end
+
+# puts caeser_cipher()
+
+puts "Write a string: "
+string = gets.chomp
+
+puts "Input a number: "
+number = gets.chomp.to_i
+
+new_string = string.gsub(/./) do |c|
+
+  case c
+  when "a"..."m", "A".."M" then (c.ord + number).chr
+  when "n"..."z", "N".."Z" then (c.ord - number).chr
+  else c
+  end
 end
 
-caeser_cipher()
+puts new_string
