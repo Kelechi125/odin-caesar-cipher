@@ -29,41 +29,14 @@ string = gets.chomp
 puts "Input a number: "
 number = gets.chomp.to_i
 
+upcase_letters = ("A".."Z").to_a
+
+downcase_letters = ("a".."z").to_a
+
+alphabet = upcase_letters + downcase_letters
+
 punctuation = " `~!@#$%^&*()-_+=|?/>.<,\]}[{".split("")
 
 split_string = string.chars
 
-for element in split_string
-  for punc in punctuation
-    if element != punc
-      next
-    elsif element == punc
-      element
-    end
-  end
-  element
 
-end
-
-
-
-
-element.sub(/[a-zA-Z]/) do |letter|
-  updated_letter = (letter.ord + number).chr
-  updated_letter
-end
-
-
-=begin
-array = string.chars.map do |char|
-  (char.ord + number).chr
-
-  #binding.pry
-end
-
-new_string = array.join
-
-p new_string
-=end
-
-# p string.tr("A-Za-z", "A-Za-z")
